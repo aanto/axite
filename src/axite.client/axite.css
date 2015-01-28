@@ -1,0 +1,144 @@
+@font-face {
+	font-family: 'entypo';
+	src: url('entypo.woff') format('woff');
+}
+
+
+/* GLOBAL BLOCKS */
+BODY {margin: 0; padding: 0; font-family: sans-serif;}
+TABLE.layout {border-collapse: collapse; width: 100%;}
+TABLE.layout > TBODY > TR > TD {vertical-align: top;}
+P, TABLE {margin: 1ex 0;}
+
+/* GLOBAL ELEMENTS */
+IMG {vertical-align: top;}
+VAR {color: darkgreen; font: normal normal 100% monospace}
+BUTTON, *[onclick] {cursor: pointer; display: inline-block;}
+*[onclick]:disabled {cursor: default;}
+TEXTAREA {width: 100%; box-sizing: border-box;}
+
+/* GLOBAL MODIFIERS */
+.annotation {font-style: italic;}
+.hidden, [hidden] {display: none !important;}
+.invisible {visibility: hidden; opacity: 0; transition: opacity 0.5s, visibility 0.5s;}
+.nobr {white-space: nowrap;}
+.nofloat {clear: both;}
+.visible {visibility: visible; opacity: 1; transition: opacity 0.2s;}
+.loading {background: repeating-linear-gradient(100deg, transparent, transparent 10px, rgba(220,220,220,.3) 10px, rgba(100,100,100,.1) 30px);}
+
+/*[ax\:key] {transition: opacity .5s;}*/
+/*.loading {opacity: 0;}*/
+
+
+/* Axite admin panels */
+#ax_adminLoginButton {position: absolute; top: 2ex; right: 2ex; z-index: 100}
+#ax_adminLogin {position: absolute; top: 0; right: 0; z-index: 100; padding: 10px 20px;}
+#ax_adminLogin INPUT {font-size: 130%;}
+#ax_adminOSD {position: fixed; top: 0; right: 0; padding: 2ex 0; z-index: 2000; font-size: 9pt; text-align: right}
+#ax_adminOSD > BUTTON {border-radius: 4ex 0 0 4ex; border-right: none; font-weight: bold;}
+#ax_adminOSD > FORM {margin-right: 2ex;}
+#ax_systemMessage {font-size: 110%;}
+#ax_systemMessage:empty {display: none;}
+#ax_systemMessage.error {color: hsla(0, 100%, 50%, 1); font-weight: bold;}
+#ax_panelHelp,
+#ax_panelOptions {position: absolute; margin: 0.6ex 0; right: 15ex; z-index: 10; width: 162ex}
+#ax_panelOptions {width: 72ex}
+
+.axOsdPanel {padding: 1px 20px 10px; text-align: left; border: 3px solid #fff; border-radius: 1ex; background: hsla(0, 0%, 95%, .95); box-shadow: 0px 0px 2px hsla(0, 0%, 0%, .2);}
+.axPanel {padding: 1px 20px 10px; text-align: left; font-size: 10pt; font-family: sans-serif;}
+.axPanel LABEL {font-weight: bold; color: darkgreen; display: block;}
+.axPanel INPUT {margin: 0.4ex 0; padding: 1px 3px; vertical-align: middle; font-size: inherit;}
+.axPanel INPUT + LABEL {display: inline; font-weight: normal; color: inherit;}
+.axPanel H2 {font: bold 12pt sans-serif; margin: 2ex 0; padding: 0.4ex 0; color: #333;}
+.axPanel HEADER {font: bold 11pt sans-serif; margin: 3ex 0 0 0; padding: 0; color: darkred;}
+.axPanel HEADER:first-child {margin-top: 1ex;}
+.axPanel P {margin: 2ex 0;}
+.axPanel P.submit {text-align: right;}
+
+.axColumn {display: inline-block; vertical-align: top; max-width: 50ex; margin: 1ex;}
+.axColumn + .axColumn {margin-left: 3ex;}
+
+.axButton,
+.axPanel BUTTON {padding: 0.4ex 1ex; font: bold 10pt sans-serif; margin: 0.6ex 0; color: #fff; background: #626C97; border: 3px solid #fff; border-radius: 1ex; opacity: .9; box-shadow: 0px 0px 2px hsla(0, 0%, 0%, .2); transition: background .4s}
+.axPanel BUTTON.big {padding: 0.6ex 2ex; font-size: 14pt;}
+.axPanel BUTTON.close {position: absolute; top:0; right: 0; padding: 0 0.6ex; margin: 0; border: none; background: transparent; color: red; font-size: 24pt; box-shadow: none; opacity: .6; transition: opacity .4s}
+.axPanel BUTTON.close:hover {opacity: 1; background: transparent;}
+.axPanel BUTTON.demo {padding: 0.1ex 0.4ex; font-size: 9pt; border-width: 1px; }
+.axButton:hover,
+.axPanel BUTTON:hover {background: #325Ca7;}
+.axButton:active,
+.axPanel BUTTON:active {box-shadow: none}
+.axButton:disabled,
+.axPanel BUTTON:disabled {background: #eee; color: #bbb;}
+
+/* RTE panel */
+#ax_rteOSD {display: none; position: fixed; top: 30px; left: 0px; z-index: 1002; padding: 0 2ex; border: 3px solid #fff; border-left: none; border-radius: 0 2ex 2ex 0; background: #626C97; box-shadow: 0 0  2px hsla(0, 0%, 0%, .2);}
+	.axMode-edit #ax_rteOSD {display: block;}
+#ax_rteOSD BUTTON {padding: 0.6ex 2ex; background: transparent; border: none; color: #fff; font-size: 12pt}
+#ax_rteOSD BUTTON:hover {background: #325Ca7;}
+#ax_rteOSD BUTTON + BUTTON {border-left: 1px solid hsla(0, 0%, 95%, .8);}
+#ax_rteOSD .spacer {margin: 0 2ex;}
+#ax_rteOSD.reduced .hideWhenReduced {display: none;}
+#ax_rteOSD.reduced .hideWhenReduced + BUTTON {border-left: none;}
+
+/* Buttons with icons */
+.withIcon {padding-left: 28pt; position: relative; min-height: 18pt; white-space: pre-line}
+.icon {font-family: 'entypo'; font-size: 32pt; left: 0; position: absolute; opacity: .7; line-height: 0;}
+BUTTON.withIcon       {background: transparent; border: none; padding: 0.4ex 1ex;}
+BUTTON.withIcon .icon {font-size: 24pt; position: relative; margin: 0ex 0.3ex 0ex -0.1ex; vertical-align: top;}
+
+/* Edit, Preview, Save buttons */
+.axMode-edit BUTTON#ax_ButtonEdit         {display: none;}
+             BUTTON#ax_ButtonView         {display: none;}
+.axMode-edit BUTTON#ax_ButtonView         {display: inline-block;}
+             BUTTON#ax_ButtonSave         {visibility: hidden;  transition: background-color .6s;}
+             BUTTON#ax_ButtonSave.changed {visibility: visible; background-color: hsla(50, 100%, 60%, 1); border-color: #fff; color: hsla(50, 100%, 20%, 1);}
+             BUTTON#ax_ButtonSave.error   {visibility: visible; background-color: hsla(0, 90%, 60%, 1); border-color: #fff; color: #fff;}
+             BUTTON#ax_ButtonSave.saved   {visibility: hidden; opacity: 0; background-color: hsla(110, 60%, 50%, 1); border-color: #fff; color: #fff; transition: visibility 8s, opacity 6s 2s;}
+
+/* Content editable */
+.axMode-edit IMG.changed, .axMode-edit SELECT.changed, .axMode-edit INPUT.changed {outline: hsla( 50, 50%, 50%,  1) solid  1px; outline-offset: 1px; transition: outline .6s;}
+.axMode-edit IMG.saved  , .axMode-edit SELECT.saved  , .axMode-edit INPUT.saved   {outline: hsla(110, 50%, 50%,  1) solid  1px; outline-offset: 1px; transition: outline .6s;}
+.axMode-edit IMG.delete , .axMode-edit SELECT.delete , .axMode-edit INPUT.delete  {outline: rgba(255,55,55,1) solid 1px; outline-offset: 1px; transition: outline .6s;}
+.axMode-edit IMG.changed, .axMode-edit IMG.saved {outline-offset: 2px; outline-width: 2px;}
+
+.axContentEditable,
+*[contenteditable=true]       {min-width: 3ex; outline: hsla(100,  0%, 50%, .3) dotted 1px; outline-offset: 1px; transition: outline .5s linear;}
+*[contenteditable=true]:hover {outline: hsla(100,  0%, 50%, .5) dotted 1px; transition: outline .4s linear;}
+*[contenteditable=true]:focus {outline: hsla(100,  0%, 20%, 1) dotted 1px; transition: none;}
+*[contenteditable=true]:empty {min-height: 2.5ex; padding-right: 0.6ex; margin-right: 0.6ex;}
+.axChanged,
+*[contenteditable=true].changed {outline: hsla( 50, 50%, 50%,  1) solid  1px; transition: outline .6s;}
+.axSaved,
+*[contenteditable=true].saved   {outline: hsla(110, 50%, 50%,  1) solid  1px; transition: outline .6s;}
+
+.axMode-edit IMG[ax\:key] {display: inline-block; min-width: 5ex; min-height: 5ex; background-image: repeating-linear-gradient(45deg, transparent, transparent 6px, rgba(255,255,255,.3) 6px, rgba(0,0,0,.1) 12px);}
+
+.axDropTarget {outline: hsla(0,  0%, 95%, 1) dashed 5px; transition: none;}
+.axUploadHint {display: none; position: absolute; z-index: 1001; padding: 0.6ex 1.4ex; margin: 1ex; border-radius: 20px; font: bold 8pt sans-serif; text-align: center;}
+.axUploadHint SPAN {display: inline-block; max-width: 25ex; vertical-align: middle; margin-left: 1ex;}
+.axMode-edit .axUploadHint {display: block;}
+
+.axPlaceholder {display: block; position: absolute; margin: -0.3ex; padding: 0.4ex 0.6ex; font: 9pt sans-serif; background-color: hsla(50, 70%, 90%, .6); /*border: 1px solid hsla( 50, 90%, 40%,  .3);*/ box-shadow: 2px 2px 4px hsla(0, 0%, 0%, .1); border-radius: 0.2ex;}
+
+/* List */
+             .axEmptyListSpacer {display: none; padding: 0.4ex 1ex; opacity: .6; border: 1px solid hsla(0, 0%, 95%, .7); background-image: repeating-linear-gradient(45deg, transparent, transparent 6px, rgba(255,255,255,.5) 6px, rgba(255,255,255,.2) 12px);}
+.axMode-edit .axEmptyListSpacer:first-child {display: inline-block;}
+.axButtonCreateListItem {margin-top: -1ex; margin-bottom: -1ex;}
+
+.axMode-view *[public=false] {display: none;}
+.axMode-edit *[public=false] {background-image: repeating-linear-gradient(135deg, transparent, transparent 6px, rgba(255,255,255,.2) 6px, rgba(0,0,0,.1) 12px);}
+.axMode-edit .delete {background-image: repeating-linear-gradient(135deg, transparent, transparent 6px, rgba(255,55,55,.7) 6px, rgba(255,55,55,.4) 12px);}
+
+             .ax_ItemControls   {display: none; background: hsla(0, 0%, 95%, .8); border: 1px solid hsla(0, 0%, 95%, .8); box-shadow: 3px 3px 9px hsla(0, 0%, 0%, .2); border-radius: 0}
+.axMode-edit .ax_ItemControls   {display: block; position: relative; z-index: 100; padding: 0 2ex; }
+.axMode-edit .ax_ItemControls P {margin: 1ex 0;}
+
+             .ax_ItemControlsImg {display: none;}
+.axMode-edit .ax_ItemControlsImg {display: inline-block; margin-left: 1.6ex; border-left: 1px solid hsla(0, 0%, 25%, .3);}
+             .ax_ItemControlsImg BUTTON:hover {color: red;}
+
+
+/* RESET */
+BUTTON.a:hover,
+BUTTON.a {padding: 0; color: inherit; font: inherit; border: none; background: transparent; box-shadow: none; text-decoration: underline;}
